@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios Web</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+    <link rel="stylesheet" href="./Diseños/estilos.css">
+</head>
+
+<body>
+    <div id="particles-js"></div>
+    <header>
+        <h1>Servicios Web</h1>
+    </header>
+    <main>
+        <section id="mapa">
+            <h2>Ubicacion y Cartografia</h2>
+                <div id="map" style="height: 400px;"></div>
+        </section>
+
+        <section id="clima">
+            <div id="contenedor">
+                <div id="caja1">
+                    <h1 id="temperatura-valor"></h1>
+                    <h1 id="temperatura-descripcion"></h1>
+                </div>
+                <div id="caja2">
+                    <h2 id="ubicacion"></h2>
+                    <img id="icono-animado" src="" alt="" height="200" width="200">
+                </div>
+                <div id="caja3">
+                    <h3>Veloc. del Viento</h3>
+                    <h1 id="viento-velocidad"></h1>
+                </div>
+            </div>
+        </section>
+
+        <section id="contador">
+            <h2>Visitas</h2>
+            <span id="contadorVisitas">0</span>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Mi Sitio Web</p>
+    </footer>
+    <script src="./Comportamientos/Contador.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="./Comportamientos/scripts.js"></script>
+</body>
+</html>
+

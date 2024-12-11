@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario de Conformidad</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="./css/estilos2.css">
+</head>
+<body>
+    <div id="particles-js"></div>
+    <header>
+        <h1>Cuestionario de Conformidad</h1>
+    </header>
+    <main>
+        <section id="cuestionario">
+            <h2>Por favor, completa el siguiente cuestionario:</h2>
+            <form>
+                <label for="satisfaccion">¿Qué tan satisfecho estás con nuestro servicio?</label><br>
+                <select id="satisfaccion" name="satisfaccion">
+                    <option value="excelente">Excelente</option>
+                    <option value="bueno">Bueno</option>
+                    <option value="regular">Regular</option>
+                    <option value="malo">Malo</option>
+                </select><br><br>
+
+                <label for="mejoras">¿Qué podríamos mejorar?</label><br>
+                <textarea id="mejoras" name="mejoras" rows="4" cols="50" placeholder="Escribe tus sugerencias aquí..."></textarea><br><br>
+
+                <button type="submit" class="boton-estilizado">Enviar Respuesta</button>
+            </form>
+        </section>
+
+        <section id="grafica">
+            <h2>Suposiciones del Clima</h2>
+            <canvas id="climaChart"></canvas>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Servicios Web</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="./js/Particulas2.js"></script>
+    <script>
+        // Función para obtener datos climáticos simulados
+        document.addEventListener('DOMContentLoaded', () => {
+            const ctx = document.getElementById('climaChart').getContext('2d');
+
+            // Simulación de datos climáticos
+            const datosClimaticos = {
+                labels: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
+                datasets: [{
+                    label: 'Temperatura (°C)',
+                    data: [22, 24, 23, 25, 24, 26, 27],
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            };
+
+            const opciones = {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Pronóstico semanal de temperatura'
+                    }
+                }
+            };
+            // Crear gráfica usando Chart.js
+            new Chart(ctx, {
+                type: 'line',
+                data: datosClimaticos,
+                options: opciones
+            });
+        });
+    </script>
+</body>
+</html>

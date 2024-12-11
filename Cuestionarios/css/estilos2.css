@@ -1,0 +1,226 @@
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(
+        circle,
+        #ffffff 3%,
+        #f9ecee 8%,
+        #f3d9de 13%,
+        #edc6cf 18%,
+        #e7b3bf 23%,
+        #e1a0b0 28%,
+        #db8da0 33%,
+        #d57a91 38%,
+        #cf6781 43%,
+        #c95472 48%,
+        #c34162 53%,
+        #bd2e53 58%,
+        #b71b43 63%,
+        #b10834 68%,
+        #9f072f 73%,
+        #8d062a 78%,
+        #7b0525 83%,
+        #690420 88%,
+        #57031b 93%,
+        #450216 98%,
+        #330211 100%
+    );
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+
+#particles-js {
+	height: 100vh; 
+	width: 100%;
+    position: fixed;
+    z-index: -1;
+}
+
+.contenedor {
+	width: 90%;
+	max-width: 1200px;
+    background-size: cover;
+    background-position:center;
+	margin-left: auto; 
+	margin-right: auto;
+    margin-top: 15px;
+    padding: 20px 30px;
+    position: relative;
+    z-index: 99;
+    opacity: .85;
+}
+
+.contenedor.header {
+    height: calc(100vh - 55px);
+    border: 3px solid #555555;
+}
+
+.barra-navegacion ul {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.barra-navegacion li {
+    list-style: none;
+    display: inline-block;
+}
+
+.barra-navegacion .logo { 
+    color:#3dff3e;
+    font-size: 50px;
+}
+
+.barra-navegacion a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 19px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    border-bottom: 1px solid transparent;
+    transition: .5s ease;
+}
+
+.barra-navegacion a:hover {
+    color: #3dff3e;
+    border-bottom: 1px solid currentcolor;
+}
+
+.contenido-descripcion {
+    width: 60%;
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.contenido-descripcion .titulo {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.contenido-descripcion .titulo span:first-child {
+    font-size: 50px; 
+    display: block;
+    font-weight: 300;
+}
+
+.contenido-descripcion .titulo span:last-child {
+    font-weight: 900;
+    font-size: 100px;
+}
+
+.contenido-descripcion .btn-link {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 25px 0;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #3dff3e;
+    border: 1px solid #555555;
+    animation: parpadeo 2s linear infinite;
+    transition: .7s ease;
+}
+
+.contenido-descripcion .btn-link:hover {
+    border: 1px solid #3dff3e;
+    animation: none;
+}
+
+
+@keyframes parpadeo  {
+    0%, 41%, 45%, 47%, 49.5%, 100%  { 
+        opacity: 1;
+    }
+
+    42%, 44%, 46%,48%,  50%  { 
+        opacity: 0; 
+    }
+}
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+textarea, select, button {
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+#grafica {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 600px) {
+    form {
+        padding: 10px;
+    }
+
+    textarea, select, button {
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+}

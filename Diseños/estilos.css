@@ -198,3 +198,24 @@ footer {
         padding: 10px;
     }
 }
+
+.contenedor-boton {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.boton-estilizado {
+    background-color: #c95472;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-family: 'Lato', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.boton-estilizado:hover {
+    background-color: #b71b43;
+}

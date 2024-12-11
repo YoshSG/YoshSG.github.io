@@ -1,8 +1,10 @@
+// Inicialización del mapa
 const mapa = L.map('map').setView([0, 0], 2);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
 }).addTo(mapa);
 
+// Función para obtener el clima en base a latitud y longitud
 async function obtenerClima(lat, lon) {
     try {
         const apiKey = "2de119c5da8e9b2f3d3314443ed6d2d5";
@@ -29,10 +31,39 @@ async function obtenerClima(lat, lon) {
     }
 }
 
+// Función para buscar dirección
+document.getElementById('buscarDireccion').addEventListener('click', async () => {
+    const direccion = document.getElementById('direccion').value;
+    if (!direccion) {
+        alert('Por favor, ingresa una dirección.');
+        return;
+    }
+
+    try {
+        const res = await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(direccion)}&format=json&limit=1`);
+        const data = await res.json();
+
+        if (data.length === 0) {
+            alert('Dirección no encontrada. Intenta con otra.');
+            return;
+        }
+
+        const { lat, lon } = data[0];
+        mapa.setView([lat, lon], 13);
+        L.marker([lat, lon]).addTo(mapa).bindPopup(`Ubicación: ${direccion}`).openPopup();
+
+        obtenerClima(lat, lon);
+    } catch (error) {
+        console.error("Error al buscar la dirección:", error);
+    }
+});
+
+// Inicialización de la ubicación actual
 async function obtenerUbicacion() {
     try {
-        const res = await axios.get(`http://api.ipstack.com/check?access_key=0b4ea8d8e2e830237d59b06bd45e6fa3`);
-        const { latitude, longitude } = res.data;
+        const res = await fetch(`http://api.ipstack.com/check?access_key=0b4ea8d8e2e830237d59b06bd45e6fa3`);
+        const { latitude, longitude } = await res.json();
+
         mapa.setView([latitude, longitude], 13);
         L.marker([latitude, longitude]).addTo(mapa).bindPopup("Tu ubicación actual").openPopup();
 
@@ -42,10 +73,7 @@ async function obtenerUbicacion() {
     }
 }
 
-mapa.on('click', function (e) {
-    const { lat, lng } = e.latlng;
-    obtenerClima(lat, lng);
-});
+// Llamada inicial para establecer la ubicación actual
 obtenerUbicacion();
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -3,22 +3,9 @@
     padding: 0; 
     box-sizing: border-box;
 }
-
 body {
     background: radial-gradient(
         circle,
-        #ffffff 3%,
-        #f9ecee 8%,
-        #f3d9de 13%,
-        #edc6cf 18%,
-        #e7b3bf 23%,
-        #e1a0b0 28%,
-        #db8da0 33%,
-        #d57a91 38%,
-        #cf6781 43%,
-        #c95472 48%,
-        #c34162 53%,
-        #bd2e53 58%,
         #b71b43 63%,
         #b10834 68%,
         #9f072f 73%,
@@ -34,14 +21,12 @@ body {
     font-family: 'Lato', sans-serif;
     font-weight: 300;
 }
-
 #particles-js {
 	height: 100vh; 
 	width: 100%;
     position: fixed;
     z-index: -1;
 }
-
 .contenedor {
 	width: 90%;
 	max-width: 1200px;
@@ -55,28 +40,23 @@ body {
     z-index: 99;
     opacity: .85;
 }
-
 .contenedor.header {
     height: calc(100vh - 55px);
     border: 3px solid #555555;
 }
-
 .barra-navegacion ul {
     display: flex; 
     justify-content: space-between;
     align-items: center;
 }
-
 .barra-navegacion li {
     list-style: none;
     display: inline-block;
 }
-
 .barra-navegacion .logo { 
     color:#3dff3e;
     font-size: 50px;
 }
-
 .barra-navegacion a {
     text-decoration: none;
     color: #fff;
@@ -87,35 +67,29 @@ body {
     border-bottom: 1px solid transparent;
     transition: .5s ease;
 }
-
 .barra-navegacion a:hover {
     color: #3dff3e;
     border-bottom: 1px solid currentcolor;
 }
-
 .contenido-descripcion {
     width: 60%;
     display: flex;
     height: 100%;
     align-items: center;
 }
-
 .contenido-descripcion .titulo {
     text-transform: uppercase;
     letter-spacing: 5px;
 }
-
 .contenido-descripcion .titulo span:first-child {
     font-size: 50px; 
     display: block;
     font-weight: 300;
 }
-
 .contenido-descripcion .titulo span:last-child {
     font-weight: 900;
     font-size: 100px;
 }
-
 .contenido-descripcion .btn-link {
     display: inline-block;
     padding: 10px 20px;
@@ -127,12 +101,10 @@ body {
     animation: parpadeo 2s linear infinite;
     transition: .7s ease;
 }
-
 .contenido-descripcion .btn-link:hover {
     border: 1px solid #3dff3e;
     animation: none;
 }
-
 
 @keyframes parpadeo  {
     0%, 41%, 45%, 47%, 49.5%, 100%  { 
@@ -148,27 +120,22 @@ body {
     font-family: 'Lato', sans-serif;
     line-height: 1.6;
 }
-
 header {
     text-align: center;
     padding: 20px;
     background-color: #333;
     color: #fff;
 }
-
 main {
     padding: 20px;
 }
-
 section {
     margin-bottom: 30px;
 }
-
 h2 {
     text-align: center;
     margin-bottom: 20px;
 }
-
 form {
     max-width: 500px;
     margin: 0 auto;
@@ -176,19 +143,16 @@ form {
     flex-direction: column;
     gap: 15px;
 }
-
 label {
     font-size: 16px;
     margin-bottom: 5px;
 }
-
 textarea, select, button {
     font-size: 16px;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
 }
-
 button {
     background-color: #333;
     color: #fff;
@@ -196,21 +160,17 @@ button {
     cursor: pointer;
     transition: background-color 0.3s;
 }
-
 button:hover {
     background-color: #555;
 }
-
 #grafica {
     max-width: 800px;
     margin: 0 auto;
 }
-
 canvas {
     max-width: 100%;
     height: auto;
 }
-
 @media (max-width: 600px) {
     form {
         padding: 10px;
@@ -223,4 +183,31 @@ canvas {
     h2 {
         font-size: 18px;
     }
+}
+.boton-estilizado {
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+}
+.boton-estilizado:hover {
+    background-color: #555;
+}
+#sugerencias ul {
+    list-style: none;
+    padding: 0;
+}
+
+#sugerencias li {
+    border: 1px solid #ddd;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f9f9f9;
 }

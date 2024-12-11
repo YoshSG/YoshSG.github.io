@@ -110,3 +110,47 @@ particlesJS(
         "retina_detect": true
       }
 );
+
+document.addEventListener('DOMContentLoaded', () => {
+  const ctx = document.getElementById('climaChart').getContext('2d');
+
+  const datosClimaticos = {
+      labels: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
+      datasets: [{
+          label: 'Temperatura (°C)',
+          data: [22, 24, 23, 25, 24, 26, 27],
+          backgroundColor: 'rgba(54, 162, 235, 0.2)',
+          borderColor: 'rgba(54, 162, 235, 1)',
+          borderWidth: 2
+      }]
+  };
+
+  const opciones = {
+      responsive: true,
+      plugins: {
+          legend: {
+              position: 'top',
+          },
+          title: {
+              display: true,
+              text: 'Pronóstico semanal de temperatura'
+          }
+      }
+  };
+
+  const climaChart = new Chart(ctx, {
+      type: 'line',
+      data: datosClimaticos,
+      options: opciones
+  });
+
+  // Lógica para descargar la gráfica como PNG
+  const botonDescargar = document.getElementById('descargarGrafica');
+  botonDescargar.addEventListener('click', () => {
+      const link = document.createElement('a');
+      link.href = ctx.canvas.toDataURL('image/png'); // Genera la URL de la imagen
+      link.download = 'grafica_clima.png'; // Nombre del archivo descargado
+      link.click(); // Dispara la descarga
+  });
+});
+
